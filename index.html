@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+<div id = "app">
+	<div class = "terminal">
+		<div class = "container">
+			<keyframes on-start="js" delay="1000" loop="repeat" component="span">
+				<p duration="50"><prompt></prompt> </p>
+				<p duration="50"><prompt></prompt> l</p>
+				<p freeze="true" duration="100"><prompt></prompt> ls</p>
+				<p duration="1000"><prompt></prompt></p>
+				<p duration="50"><prompt></prompt>wh</p>
+				<p duration="50"><prompt></prompt>whoa</p>
+				<p freeze="true" duration="100"><prompt></prompt>whoami</p>
+				<p duration="100"></p>
+				<p freeze="true" duration="10">> You're Bob!</p>
+				<p duration="500"><prompt></prompt></p>
+				<p duration="50"><prompt></prompt> cle</p>
+				<p duration="200"><prompt></prompt> clear</p>
+			</keyframes>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="build/app.js"></script>
+<script type="text/javascript">
+	function js(dom) {
+		dom.classList.add("started")
+	}
+</script>
+<style>
+.terminal {
+    background: #000;
+    width: 50%;
+    height: 200px;
+    color: #fff;
+}
+.container{
+	float:left;
+	width:100%;
+	padding: 0 10px;
+	font-family:Fakt Pro;
+}
+
+.prompt {
+	color:rgba(255,255, 255,0.4);
+	margin-right:10px;
+}
+</style>
+</body>
+</html>

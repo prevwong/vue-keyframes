@@ -1,5 +1,5 @@
 {
-  "name": "vue-keyframes",
+  "name": "vue-keyframes-demo",
   "xo": {
     "rules": {
       "space-in-parens": 0
@@ -23,6 +23,10 @@
     "url": "https://github.com/prevwong/vue-keyframes/issues"
   },
   "homepage": "https://github.com/prevwong/vue-keyframes#readme",
+  "dependencies": {
+    "vue": "^2.5.2",
+    "vue-loader": "^7.5.3"
+  },
   "devDependencies": {
     "xo": "^0.18.2",
     "babel-cli": "^6.26.0",
@@ -36,7 +40,6 @@
     "css-loader": "^0.23.1",
     "style-loader": "^0.13.2",
     "transform-runtime": "0.0.0",
-    "vue": "^2.5.2",
-    "vue-loader": "^7.5.3"
+    "vue-keyframes" : "0.0.0"
   }
 }
