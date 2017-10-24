@@ -1,6 +1,6 @@
-const VueKeyframes = {
+const Keyframes = {
 	install(Vue) {
-		Vue.component('Keyframe', {
+		Vue.component('Keyframes', {
 			mounted() {
 				this.animateNextFrame();
 			},
@@ -114,4 +114,4 @@ const VueKeyframes = {
 	}
 };
 
-export default VueKeyframes;
+export default Keyframes;
