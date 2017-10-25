@@ -1,53 +1,495 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<link rel="stylesheet" type="text/css" href="stylesheets/foundation.css" />
+	<link rel="stylesheet" type="text/css" href="material-icons/material-icons.css" />
+	<link rel="stylesheet" type="text/css" href="font-awesome/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+<link href="https://fonts.googleapis.com/css?family=Arimo|Hind" rel="stylesheet">
+
 </head>
 <body>
-<div id = "app">
-	<div class = "terminal">
-		<div class = "container">
-			<keyframes on-start="js" delay="1000" loop="repeat" component="span">
-				<p duration="50"><prompt></prompt> </p>
-				<p duration="50"><prompt></prompt> l</p>
-				<p freeze="true" duration="100"><prompt></prompt> ls</p>
-				<p duration="1000"><prompt></prompt></p>
-				<p duration="50"><prompt></prompt>wh</p>
-				<p duration="50"><prompt></prompt>whoa</p>
-				<p freeze="true" duration="100"><prompt></prompt>whoami</p>
-				<p duration="100"></p>
-				<p freeze="true" duration="10">> You're Bob!</p>
-				<p duration="500"><prompt></prompt></p>
-				<p duration="50"><prompt></prompt> cle</p>
-				<p duration="200"><prompt></prompt> clear</p>
-			</keyframes>
+<div style="margin-bottom:30px" id = "app">
+	<div class = "row">
+		<div style="float:left; width:100%; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 30px; margin-bottom:60px;">
+		<div style="padding-top:80px;padding-bottom:30px;" class = "columns medium-12">
+			
+			<div class = "columns medium-8 medium-centered">
+			<header style="margin-bottom:50px">
+				
+				<h2 style="margin-bottom:0px; font-family:Inconsolata">vue-keyframes <small style="font-size:12px;">Create frame-based animations in VueJS</small></h2>
+				<p style="font-size:11px; margin-bottom: 5px">Developed by Prev Wong</p>
+				
+				
+			</header>
+			<div style="float:left; width:100%" class = "terminal">
+				<div class = "container">
+					<keyframes id="terminal" delay="0" ref="ho" on-end="onTerminalEnd" on-animate="onTerminalAnimate" component="span">
+						<p duration="500"><prompt></prompt></p>
+						<p duration="50"><prompt>l</prompt></p>
+						<p duration="50"><prompt>ls</prompt></p>
+						<p duration="50"><prompt>ls -</prompt></p>
+						<p duration="100"><prompt>ls -a</prompt></p>
+						<p duration="100" freeze="true"><prompt no-caret="true">ls -a</prompt></p>
+						<p duration="50"><prompt></prompt></p>
+						<p duration="50"><prompt>to</prompt></p>
+						<p duration="50"><prompt>touch</prompt></p>
+						<p duration="50"><prompt>touch packa</prompt></p>
+						<p duration="50"><prompt>touch package.j</prompt></p>
+						<p duration="100"><prompt>touch package.json</prompt></p>
+						<p duration="100" freeze="true"><prompt no-caret="true">touch package.json</prompt></p>
+						<p duration="50"><prompt updated="true" time="0"></prompt></p>
+						<p duration="50"><prompt updated="true" time="0">tar -</prompt></p>
+						<p duration="50"><prompt updated="true" time="0">tar -xcf</prompt></p>
+						<p duration="50"><prompt updated="true" time="0">tar -xcf drool</prompt></p>
+						<p duration="50"><prompt updated="true" time="0">tar -xcf drooltip.js</prompt></p>
+						<p duration="50" freeze="true"><prompt updated="true" time="0" no-caret="true">tar -xcf drooltip.js</prompt></p>
+						<span duration="1000" freeze="true">> Unpacking...<br /></span>
+						<pre duration="500">Extracting [                  ] 0% 3.5s</pre>
+						<pre duration="500">Extracting [===               ] 5% 3.0s</pre>
+						<pre duration="500">Extracting [=======           ] 34% 2.5s</pre>
+						<pre duration="500">Extracting [==========        ] 60% 2.0s</pre>
+						<pre duration="500">Extracting [==============    ] 83% 1.5s</pre>
+						<pre duration="500">Extracting [================= ] 98% 1.0s</pre>
+						<pre duration="500">Extracting [==================] 100% 0s</pre>
+
+
+
+
+						<p freeze="true" duration="500" style="color:green;">Success!</p>
+						<p duration="50"><prompt updated="true" time="0"></prompt></p>
+						<p duration="50"><prompt updated="true" time="0">git</prompt></p>
+						<p freeze="true" duration="100"><prompt updated="true" time="0" no-caret="true">git stash</prompt></p>
+						<span freeze="true" style="font-size:12px" duration="400">> Saved working directory and index state WIP on master: b93954d rofl</span>
+						<p duration="50"><prompt>cle</prompt></p>
+						<p duration="50"><prompt>clear</prompt></p>
+						<p duration="50" freeze="true"><prompt>clear</prompt></p>
+					</keyframes>
+					<a id="replay-terminal" class="hide" ref="replayTerminal"><i class = "material-icons">refresh</i></a>
+				</div>
+			</div>
+			<div style="margin:40px 0 50px 0;float:left;width:100%; border-top:1px solid; border-bottom:1px solid; border-color:rgba(255,255,255,0.1); padding:20px 0;" id="actions">
+				<div class = "row">
+			    <div id="grab_wrapper"  class="columns large-8 medium-12 float-left">
+			        <a target="_blank" href="https://github.com/prevwong/drooltip.js/" class="button">
+			            <div class="bg"></div>
+			            <div class="content">Grab the source!</div> <i class="icon fa fa-github"></i></a>
+			    </div>
+			    <div id="donate_wrapper" class="columns large-4 medium-12 float-left">
+			        <a id="donate" class="coffee button">
+			            <div class="bg"></div>
+			            <div class="content">Buy me coffee</div>
+			        </a>
+			    </div>
+			    </div>
+			</div>
+			</div>
 		</div>
+		</div>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>01</span> Installation</h4>
+			<ul class = "steps">
+				<li>
+					<p>Grab the package via npm</p>
+					<pre><code class="bash">npm install --save vue-keyframes</code></pre>
+				</li>
+				<li>
+					<p>Require the plugin in your project file</p>
+					<pre><code class="js">import {Keyframes} from 'vue-keyframes';</code></pre>
+				</li>
+				<li>
+					<p>Install the plugin</p>
+					<pre><code class="js">Vue.use(Keyframes);</code></pre>
+				</li>
+			</ul>
+		</section>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>02</span> Usage</h4>
+			<ul class = "steps">
+				<li>
+					<p>Create a <i class="code">&lt;keyframes&gt;</i> component. In it, every child element will act as a <i>frame</i>. [Every child element must be wrapped in a component/HTML tag]</p>
+<pre>
+<code>&lt;keyframes loop="true"&gt;
+	&lt;p duration="500"&gt;Hi World&lt;/p&gt;
+	&lt;p duration="1000"&gt;How's it going ?&lt;/p&gt;
+	&lt;p duration="500"&gt;See ya.&lt;/p&gt;
+&lt;/keyframes&gt;
+</code>
+</pre>
+<div class="demo">
+<keyframes delay="0" loop="true">
+<p duration="500">Hi World</p>
+<p duration="1000">How's it going ?</p>
+<p duration="500">See ya.</p>
+</keyframes>
+</div>
+				</li>
+				<li>
+					<p>Of course, you can customize a little </p>
+					<div class = "row">
+						<div class = "columns medium-6">
+							<span class="table_header"><i class="code">&lt;keyframes&gt;</i> component</span>
+							<table>
+								<thead>
+								    <tr>
+								        <th style="width:70px;">Attribute</th>
+								        <th>Value</th>
+								    </tr>
+								</thead>
+								<tbody>
+								    <tr>
+								        <td>loop</td>
+								        <td>
+								            If set to true, the keyframes will repeat itself infinitely
+								            <div class="code">
+								                <span class="default">Default: false</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>delay</td>
+								        <td>
+								            Defines a delay time(ms) before animating keyframes.
+								            <div class="code">
+								                <span class="default">Default: 0</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>component</td>
+								        <td>
+								           Specifies the component <i class="code">&lt;keyframes&gt;</i> will render as. Both standard HTML elements, and Vue components are accepted.
+								            <div class="code">
+								                <span class="default">Default: div</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>auto-run</td>
+								        <td>
+								            Defines whether to automatically play keyframes
+								            <div class="code">
+								                <span class="default">Default: true</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>on-animate</td>
+								        <td>
+								            Callback function for whenever a frame is being animated.
+								            <div class="code">
+								                <span class="default">Default: false</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>on-end</td>
+								        <td>
+								            Callback function once all frames have been animated.
+								            <div class="code">
+								                <span class="default">Default: false</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>...</td>
+								        <td>
+								            Every other attribute will be rendered along with the component as usual
+								            
+								        </td>
+								    </tr>
+
+								</tbody>
+							</table>
+						</div>
+						<div style="margin-top:50px" class = "columns medium-6">
+							<span class="table_header"><i>Child</i> elements</span>
+							<table>
+								<thead>
+								    <tr>
+								        <th style="width:70px;">Attribute</th>
+								        <th>Value</th>
+								    </tr>
+								</thead>
+								<tbody>
+								    <tr>
+								        <td>duration</td>
+								        <td>
+								            Defines the length of time(ms) the frame/element should show.
+								            <div class="code">
+								                <span class="default">Default: 200</span>
+								            </div>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>freeze</td>
+								        <td>
+								            If set to true, once the frame has animated, it will not be removed.
+								            <div class="code">
+								                <span class="default">Default: false</span>
+								            </div>
+								        </td>
+								    </tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>03</span> Freezing frames</h4>
+			<p>There are times when the next frame also contains the contents of the current frame, so instead of copy-pasting the current frame, it's much more convenient to just freeze it. <br />Think of it as "appending" the current frame, whereby it wont be removed by the next frame.</p>
+			<ul class = "steps">
+<li>
+<pre>
+<code>&lt;keyframes loop="true"&gt;
+	&lt;p duration="500"&gt;Hi World&lt;/p&gt;
+	&lt;p freeze="true" duration="1000"&gt;How's it going ?&lt;/p&gt;
+	&lt;p duration="500"&gt;See ya.&lt;/p&gt;
+&lt;/keyframes&gt;
+</code>
+</pre>
+<div style="height:100px" class="demo">
+<keyframes delay="0" loop="true">
+<p duration="500">Hello World</p>
+<p freeze="true" duration="1000">How's it going ?</p>
+<p duration="500">See ya.</p>
+</keyframes>
+</div>
+</li>
+			</ul>
+		</section>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>04</span> Custom triggers</h4>
+			<p>By default, the keyframes will animate when they are rendered onto the page. But of course, this shouldnt always be the case. For example, sometimes you only want to animate the keyframes when the user clicks on a button or perhaps when the user scrolls to a particular section.<br />To do so, you will need to set <i class="code">auto-run</i> to false. 
+
+			Every keyframes component contains a <i class="code">stop</i> data. <i class="code">stop</i> is set to true when <i class="code">auto-run</i> is set to false. Hence in order to start/resume the keyframes, you will need to modify the component's <i class="code">stop</i> data. <br /><br />In VueJS, manipulating a component's data externally can be done using <i class="code">refs</i>.
+
+			</p>
+			<ul class = "steps">
+<li>
+<pre>
+<code>&lt;keyframes auto-run="false" ref="myKeyframes"&gt;
+	&lt;p duration="500"&gt;Hi World&lt;/p&gt;
+	&lt;p freeze="true" duration="1000"&gt;How's it going ?&lt;/p&gt;
+	&lt;p duration="500"&gt;See ya.&lt;/p&gt;
+&lt;/keyframes&gt;
+&lt;a ref="custom_trigger"&gt;Click me to animate keyframes&lt;/a&gt;
+</code>
+</pre>
+<li>
+<pre>
+<code>// Your JS project file
+...
+var app = new Vue({...});
+
+app.$refs.custom_trigger.addEventListener("click", (e) => {
+	app.$refs.myKeyframes.stop = false;
+	e.target.parentNode.removeChild(e.target); // remove button
+})
+</code>
+</pre>
+<div style="height:100px" class="demo">
+<keyframes ref="myKeyframes" auto-run="false">
+<p duration="500">Hello World</p>
+<p freeze="true" duration="1000">How's it going ?</p>
+<p duration="500">See ya.</p>
+</keyframes>
+<a ref="custom_trigger" class="demo-btn">Click me</a>
+</div>
+</li>
+			</ul>
+		</section>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>05</span> Manual Looping</h4>
+			<p>In additon to the automatic looping that is simply activated by adding the <i class="code">loop="true"</i>, you can also manually call <i class="code">resetFrames()</i> method to loop the sequence.</p>
+			<ul class = "steps">
+			<li>
+<pre>
+<code>&lt;keyframes delay="100" ref="myKeyframes"&gt;
+	&lt;p freeze="true" duration="500"&gt;Goodmorning&lt;/p&gt;
+	&lt;p freeze="true" duration="1000"&gt;I am eating&lt;/p&gt;
+	&lt;p freeze="true" duration="500"&gt;I am still eating&lt;/p&gt;
+&lt;/keyframes&gt;
+&lt;a ref="repeat"&gt;Restart animation&lt;/a&gt;
+</code>
+</pre>
+</li>
+<li>
+<pre>
+<code>// Your JS project file
+...
+var app = new Vue({...});
+
+app.$refs.repeat.addEventListener("click", (e) => {
+	app.$refs.myKeyframes.resetFrames();
+})
+</code>
+</pre>
+<div style="height:180px" class="demo">
+<keyframes delay="100" ref="myKeyframes0">
+	<p freeze="true" duration="500">Goodmorning</p>
+	<p freeze="true" duration="1000">I am eating</p>
+	<p freeze="true" duration="500">I am still eating</p>
+</keyframes>
+<a class="demo-btn" ref="repeat">Restart animation</a>
+</div>
+</li>
+</ul>
+		</section>
+		<section class = "section medium-12 columns">
+			<h4 class="title"><span>06</span> Callback Functions</h4>
+			<ul class = "subsection">
+			<h5 class="title">On Animate <small>- Runs whenever a frame is animated.</small></h5>
+			<ul class = "steps">
+<li>
+<p>Your function should accept these 2 parameters</p>
+<ul class="param_specification">
+    <li class="none"><span>el</span>Keyframes' DOM element</li>
+    <li><span>frameNum</span>int</li>
+</ul>
+<pre>
+<code>function animateFn(el, frameNum){
+	/**
+		If it's the 2nd frame that is being animated,
+		add the "animate" class to the keyframes' component
+	**/
+	if ( frameNum == 2 ) { 
+		el.classList.add("animate");
+	} else {
+		el.classList.remove("animate");
+	}
+}
+</code>
+</pre>
+</li>
+
+<li>
+<pre>
+<code>&lt;keyframes on-animate="animateFn" loop="true"&gt;
+	&lt;p duration="1000"&gt;0&lt;/p&gt;
+	&lt;p duration="1000"&gt;1&lt;/p&gt;
+	&lt;p duration="1000"&gt;2&lt;/p&gt;
+	&lt;p duration="1000"&gt;3&lt;/p&gt;
+	&lt;p duration="1000"&gt;4&lt;/p&gt;
+&lt;/keyframes&gt;
+</code>
+</pre>
+<div style="height:100px" class="demo">
+	<div class="numbers">
+	<keyframes on-animate="animateFn" loop="true">
+	<p duration="1000">0</p>
+	<p duration="1000">1</p>
+	<p duration="1000">2</p>
+	<p duration="1000">3</p>
+	<p duration="1000">4</p>
+	</keyframes>
+	</div>
+</div>
+</li>
+			</ul>
+		</ul>
+			<ul class = "subsection">
+			<h5 class="title">On End <small>- Runs after all frames are animated.</small></h5>
+			<ul class = "steps">
+<li>
+<p>Your function should accept one parameter</p>
+<ul class="param_specification">
+    <li class="none"><span>el</span>Keyframes' DOM element</li>
+</ul>
+<pre>
+<code>function endFn(el){
+	// Increment after every frames are animated
+	var b = document.getElementById("text").querySelector("b");
+	var num = parseInt(b.innerHTML) + 1;
+	b.innerHTML = num;
+}
+</code>
+</pre>
+</li>
+
+<li>
+<pre>
+<code>&lt;keyframes on-end="endFn" loop="true"&gt;
+	&lt;p duration="1000"&gt;0&lt;/p&gt;
+	&lt;p duration="1000"&gt;1&lt;/p&gt;
+	&lt;p duration="1000"&gt;2&lt;/p&gt;
+	&lt;p duration="1000"&gt;3&lt;/p&gt;
+	&lt;p duration="1000"&gt;4&lt;/p&gt;
+&lt;/keyframes&gt;
+&lt;p id="text"&gt;Keyframes ran: &lt;b&gt;0&lt;/b&gt; times&lt;/p&gt;
+</code>
+</pre>
+<div style="height:140px" class="demo">
+	<div class="numbers">
+	<keyframes on-end="endFn" loop="true"> 
+	<p duration="1000">0</p>
+	<p duration="1000">1</p>
+	<p duration="1000">2</p>
+	<p duration="1000">3</p>
+	<p duration="1000">4</p>
+	</keyframes>
+	<p id="text" style="margin-top:10px">Keyframes ran: <b>0</b> times</p>
+	</div>
+</div>
+</li>
+			</ul>
+		</ul>
+		</section>
+		<footer class="columns medium-12 main_footer">
+          <h4>
+            Made with <i class="fa fa-heart"></i> in Kuala Lumpur, Malaysia <br>
+            Designed &amp; Developed by <a href="https://imprev.co" target="_blank">Prev Wong</a> <br>
+           	vue-keyframes is licensed under MIT
+          </h4>
+          <ul class="social">
+            <li><a href="https://imprev.co" class="portfolio" target="_blank"><i class="fa fa-user-circle-o"></i></a></li>
+             <li><a href="https://twitter.com/prevwong" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://github.com/prevwong" class="github" target="_blank"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </footer>
 	</div>
 </div>
 <script type="text/javascript" src="build/app.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <script type="text/javascript">
-	function js(dom) {
-		dom.classList.add("started")
+	function animateFn(el, frameNum){
+		if ( frameNum == 2 ) {
+			el.classList.add("animate");
+		} else {
+			el.classList.remove("animate")
+		}
+	}
+
+	function onTerminalAnimate(dom, frameNum){
+		if ( frameNum === 0 ) {
+			dom.parentNode.parentNode.classList.remove("animated")
+			document.getElementById("replay-terminal").classList.add("hide")
+		}
+	}
+
+	function onTerminalEnd(el){
+		el.parentNode.parentNode.classList.add("animated")
+		document.getElementById("replay-terminal").classList.remove("hide")
+	}
+
+	function endFn(el){
+		var b = document.getElementById("text").querySelector("b");
+		var num = parseInt(b.innerHTML) + 1;
+		b.innerHTML = num;
+	}
+
+	function onEnd(dom){
+		dom.parentNode.parentNode.classList.add("animated")
 	}
 </script>
 <style>
-.terminal {
-    background: #000;
-    width: 50%;
-    height: 200px;
-    color: #fff;
-}
-.container{
-	float:left;
-	width:100%;
-	padding: 0 10px;
-	font-family:Fakt Pro;
-}
 
-.prompt {
-	color:rgba(255,255, 255,0.4);
-	margin-right:10px;
-}
 </style>
 </body>
 </html>

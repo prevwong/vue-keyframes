@@ -299,11 +299,47 @@ window.Vue = _vueEsm2.default;
 
 _vueEsm2.default.use(_vueKeyframes.Keyframes);
 _vueEsm2.default.component('prompt', {
-  "template": '<span class="prompt">~/<slot></slot> $ </span>'
+	"template": '<span class="prompt"><b>~ <i class="material-icons">arrow forward</i></b><span class="c"><slot></slot></span class="c"><caret v-if="noCaret==\'false\'"></caret><git :updated="updated" :time="time"></git></span>',
+	"props": {
+		"noCaret": {
+			default: 'false'
+		},
+		"updated": { default: false },
+		"time": { default: "2" }
+	},
+	void_element: true
+});
+
+_vueEsm2.default.component('caret', {
+	"template": '<span class="caret"></span>',
+	void_element: true // allow the template to be a void element
+});
+
+_vueEsm2.default.component('git', {
+	"template": '<span :class="{updated: updated}" class="git"><b>master</b><i v-if="updated" class="material-icons">close</i><time>{{time}}m</time></span>',
+	props: {
+		updated: { default: false },
+		time: { default: "2" }
+	},
+	void_element: true // allow the template to be a void element
 });
 
 var app = new _vueEsm2.default({
-  el: '#app'
+	el: '#app'
+});
+
+app.$refs.custom_trigger.addEventListener("click", function (e) {
+	app.$refs.myKeyframes.stop = false;
+	e.target.parentNode.removeChild(e.target); // remove button
+});
+
+app.$refs.replayTerminal.addEventListener("click", function (e) {
+	app.$refs.ho.stop = false;
+	app.$refs.ho.resetFrames();
+});
+
+app.$refs.repeat.addEventListener("click", function (e) {
+	app.$refs.myKeyframes0.resetFrames();
 });
 
 /***/ }),
@@ -11146,36 +11182,49 @@ const Keyframes = {
 		Vue.component('Keyframes', {
 			mounted() {
 				this.animateNextFrame();
+				if ( !JSON.parse(this.autoRun) ) { 
+					this.stop = true; 
+				}
 			},
 			template: '<div></div>',
+			watch: {
+				stop(val) {
+					if ( !val ) {
+						this.animateNextFrame();
+					}
+				}
+			},
 			methods: {
-				callFn(fn) {
-					if ( fn && typeof (fn) === 'function') {
-						fn( this.$el );
-					} else if ( fn && window[fn] !== undefined ) {
-						window[fn]( this.$el );
+				callFn(fn, noFrame) {
+					if ( fn !== false && typeof (fn) === 'function') {
+						noFrame ? fn(this.$el) : fn( this.$el, this.frameNum );
+					} else if ( fn !== false && window[fn] !== undefined ) {
+						noFrame ? window[fn](this.$el) : window[fn]( this.$el, this.frameNum );
 					} else {
 						return false;
 					}
 				},
 				animateNextFrame() {
-					if ( this.frameNum === 1 ) {
-						this.callFn(this.onStart);
-					}
+					if ( this.stop == true ) { return false; }
 					if ( this.frameNum > 0 ) {
 						const freeze = this.frames.data[this.frameNum - 1].freeze;
 						if ( !freeze ) {
 							Vue.set(this.frames.visibility, this.frameNum - 1, false);
 						}
-						Vue.set(this.frames.visibility, this.frameNum, true);
 					}
+					Vue.set(this.frames.visibility, this.frameNum, true);
+					setTimeout(() => {
+						// if ( this.frameNum === 0 ) {
+							this.callFn(this.onAnimate);
+						// }
+					})
 					this.waitForDelay(() => {
 						if ( this.frameNum < Object.keys(this.frames.data).length - 1) {
 							this.frameNum++;
 							this.animateNextFrame();
 						} else {
-							this.callFn(this.onEnd);
-							if ( this.loop === 'repeat' ) {
+							this.callFn(this.onEnd, true);
+							if ( JSON.parse(this.loop) ) {
 								this.resetFrames();
 							}
 						}
@@ -11203,26 +11252,33 @@ const Keyframes = {
 					frames: {visibility: {}, data: {}},
 					frameNum: -1,
 					timer: null,
-					count: 0
+					count: 0,
+					stop : false
 				};
 			},
 			props: {
 				loop: {default: false},
 				delay: {default: 0},
-				onStart: {default: false},
+				onAnimate: {default: false},
 				onEnd: {default: false},
+				autoRun: {default: true},
 				component: {default: 'div'}
 			},
 			render(createElement) {
 				if ( !this.register ) {
 					const myChildren = this.$slots.default
 									.filter(node => !node.text);
-
 					myChildren.map((child, index) => {
 						this.resetFrames();
+						let duration = 200;
+						let freeze = false;
+						if ( child.data !== undefined && child.data.attrs !== undefined ) {
+							duration = child.data.attrs.duration === undefined ? 200 : child.data.attrs.duration;
+							freeze = child.data.attrs.freeze === undefined ? false : child.data.attrs.freeze;
+						}
 						Vue.set(this.frames.data, index, {
-							duration: parseInt(child.data.attrs.duration, 10),
-							freeze: child.data.attrs.freeze
+							duration: parseInt(duration, 10),
+							freeze: freeze
 						});
 						if ( index === myChildren.length - 1 ) {
 							this.register = true;
@@ -11230,14 +11286,15 @@ const Keyframes = {
 						return true;
 					});
 				}
-
 				const myChildren = this.$slots.default
 								.filter(node => !node.text)
 								.map((child, index) => {
 									let val = null;
 									if ( this.frames.visibility[index] ) {
-										delete child.data.attrs.freeze;
-										delete child.data.attrs.duration;
+										if ( child.data !== undefined && child.data.attrs !== undefined ) {
+											delete child.data.attrs.freeze;
+											delete child.data.attrs.duration;
+										}
 										val = child;
 									} else {
 										Vue.set(this.frames.visibility, index, false);
