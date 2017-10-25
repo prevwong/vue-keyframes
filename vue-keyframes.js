@@ -72,28 +72,6 @@ module.exports =
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _keyframes = __webpack_require__(1);
-
-Object.defineProperty(exports, 'Keyframes', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_keyframes).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var Keyframes = {
@@ -231,7 +209,7 @@ var Keyframes = {
 					return val;
 				});
 
-				var x = createElement(this.component, {}, myChildren);
+				var x = createElement(this.component, {}, children);
 				return x;
 			}
 		});

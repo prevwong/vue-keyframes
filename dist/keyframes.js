@@ -127,7 +127,7 @@ const Keyframes = {
 				const x = createElement(
 					this.component,
 					{},
-					myChildren
+					children
 				);
 				return x;
 			}

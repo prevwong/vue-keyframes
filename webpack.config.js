@@ -1,7 +1,7 @@
 module.exports = {
   // This is the "main" file which should include all other modules
   entry: {
-    "vue-keyframes" : './dist/index.js',
+    "vue-keyframes" : './dist/keyframes.js',
   },
   // Where should the compiled file go?
   output: {
