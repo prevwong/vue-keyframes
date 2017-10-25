@@ -78,7 +78,7 @@ code {
   .terminal.animated {
     transform: scale(1.1); }
   .terminal p, .terminal span {
-    font-size: 13px; }
+    font-size: 15px; }
   .terminal p {
     position: relative;
     margin-bottom: 8px; }
