@@ -352,7 +352,8 @@ a.button {
     float: left;
     width: 100%;
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    font-size: 13px; }
   a.button.coffee {
     padding: 30px 0;
     text-align: center;
