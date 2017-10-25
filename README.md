@@ -14,10 +14,10 @@ Prev Wong	@prevwong 	imprev.co
 </code>
 </pre>
 [![npm version](https://badge.fury.io/js/drooltip.js.svg)](https://badge.fury.io/js/drooltip.js)
-[![Code Climate](https://codeclimate.com/github/prevwong/drooltip.js/badges/gpa.svg)](https://codeclimate.com/github/prevwong/drooltip.js)
-[![codebeat badge](https://codebeat.co/badges/feba30b2-1759-4472-b6af-997c9c46f952)](https://codebeat.co/a/prevwong/projects/github-com-prevwong-drooltip-js-master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/db9b8d8043c84f1ca7cd9686daae5717)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prevwong/drooltip.js&amp;utm_campaign=Badge_Grade)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![Support](https://supporterhq.com/api/b/9okwcyts1gevgy53glt8ffpyc)](https://supporterhq.com/give/9okwcyts1gevgy53glt8ffpyc)
+
 ## Overview
 
 vue-keyframes is a Vue component that allows you to create frame based animations. Originally inspired by [react-keyframes](https://github.com/zeit/react-keyframes)
