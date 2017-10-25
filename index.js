@@ -1,1 +1,1 @@
-export {default as Keyframes} from './dist/keyframes'
+export {default as Keyframes} from './src/keyframes'

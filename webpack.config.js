@@ -1,7 +1,7 @@
 module.exports = {
   // This is the "main" file which should include all other modules
   entry: {
-    "keyframes" : './src/keyframes.js',
+    "keyframes" : './index.js',
   },
   // Where should the compiled file go?
   output: {
