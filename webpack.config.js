@@ -1,12 +1,12 @@
 module.exports = {
   // This is the "main" file which should include all other modules
   entry: {
-    "keyframes" : './index.js',
+    "vue-keyframes" : './dist/index.js',
   },
   // Where should the compiled file go?
   output: {
     // To the `dist` folder
-    path: __dirname + "/dist",
+    path: __dirname + "/",
     filename: "[name].js"
   },
   module: {
