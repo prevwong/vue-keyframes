@@ -13,7 +13,7 @@ github.com/prevwong/vue-keyframes
 Prev Wong	@prevwong 	imprev.co
 </code>
 </pre>
-[![npm version](https://badge.fury.io/js/vue-keyframes.svg)](https://badge.fury.io/js/drooltip.js)
+[![npm version](https://badge.fury.io/js/vue-keyframes.svg)](https://badge.fury.io/js/vue-keyframes)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![Support](https://supporterhq.com/api/b/9okwcyts1gevgy53glt8ffpyc)](https://supporterhq.com/give/9okwcyts1gevgy53glt8ffpyc)
