@@ -34,7 +34,7 @@ const Keyframes = {
 					}
 				},
 				animateNextFrame() {
-					if ( this.stop == true ) { return false; }
+					if ( this.stop === true ) { return false; }
 					if ( this.frameNum > 0 ) {
 						const freeze = this.frames.data[this.frameNum - 1].freeze;
 						if ( !freeze ) {
