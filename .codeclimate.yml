@@ -1,0 +1,6 @@
+engines:
+ratings:
+  paths:
+  - dist/**
+exclude_paths:
+- "vue-keyframes.js"
