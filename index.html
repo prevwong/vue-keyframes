@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="font-awesome/font-awesome.min.css" />
 
 	<link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+	<link rel="stylesheet" type="text/css" href="drooltip/package/css/drooltip.css" />
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
 </head>
@@ -19,7 +20,14 @@
 			<header style="margin-bottom:50px">
 				
 				<h2 style="margin-bottom:0px; font-family:Inconsolata">vue-keyframes <small style="font-size:12px;">Create frame-based animations in VueJS</small></h2>
-				<p style="font-size:11px; margin-bottom: 5px">Developed by Prev Wong</p>
+				<div class = "author_links author_links1">
+		            <ul>
+		                <li><a target="_blank" href="https://imprev.co"><i class="fa fa-user-circle-o"></i></a></li>
+		                <li><a target="_blank" href="https://twitter.com/prevwong"><i class="fa fa-twitter"></i></a></li>
+		                <li><a target="_blank" href="https://dribbble.com/prevwong"><i class="fa fa-dribbble"></i></a></li>
+		            </ul>
+		        </div>
+				<p style="font-size:11px; margin-bottom: 5px">Developed by <span style="border-bottom:1px dashed rgba(255,255,255,0.4);" class="tooltip" title=".author_links1">Prev Wong</span></p>
 				
 				
 			</header>
@@ -72,7 +80,7 @@
 			<div style="margin:40px 0 50px 0;float:left;width:100%; border-top:1px solid; border-bottom:1px solid; border-color:rgba(255,255,255,0.1); padding:20px 0;" id="actions">
 				<div class = "row">
 			    <div id="grab_wrapper"  class="columns large-8 medium-12 float-left">
-			        <a target="_blank" href="https://github.com/prevwong/drooltip.js/" class="button">
+			        <a target="_blank" href="https://github.com/prevwong/vue-keyframes/" class="button">
 			            <div class="bg"></div>
 			            <div class="content">Grab the source!</div> <i class="icon fa fa-github"></i></a>
 			    </div>
@@ -358,7 +366,7 @@ app.$refs.repeat.addEventListener("click", (e) => {
 <pre>
 <code>function animateFn(el, frameNum){
 	/**
-		If it's the 2nd frame that is being animated,
+		If it's the 3rd frame that is being animated,
 		add the "animate" class to the keyframes' component
 	**/
 	if ( frameNum == 2 ) { 
@@ -444,9 +452,16 @@ app.$refs.repeat.addEventListener("click", (e) => {
 		</ul>
 		</section>
 		<footer class="columns medium-12 main_footer">
+			<div class = "author_links author_links2">
+	            <ul>
+	                <li><a target="_blank" href="https://imprev.co"><i class="fa fa-user-circle-o"></i></a></li>
+	                <li><a target="_blank" href="https://twitter.com/prevwong"><i class="fa fa-twitter"></i></a></li>
+	                <li><a target="_blank" href="https://dribbble.com/prevwong"><i class="fa fa-dribbble"></i></a></li>
+	            </ul>
+	        </div>
           <h4>
             Made with <i class="fa fa-heart"></i> in Kuala Lumpur, Malaysia <br>
-            Designed &amp; Developed by <a href="https://imprev.co" target="_blank">Prev Wong</a> <br>
+            Designed &amp; Developed by <span style="border-bottom:1px dashed rgba(255,255,255,0.4);" class="tooltip" title=".author_links2">Prev Wong</span> <br>
            	vue-keyframes is licensed under MIT
           </h4>
           <ul class="social">
@@ -459,9 +474,12 @@ app.$refs.repeat.addEventListener("click", (e) => {
 </div>
 <script type="text/javascript" src="build/app.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="drooltip/package/js/build/drooltip.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 <script type="text/javascript">
+	var tooltip = new Drooltip({"element" : ".tooltip", "animation" : "bounce", "background" : "#272727"});
+
 	function animateFn(el, frameNum){
 		if ( frameNum == 2 ) {
 			el.classList.add("animate");

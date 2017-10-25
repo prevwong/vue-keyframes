@@ -51,6 +51,19 @@ code {
 .hljs-section, .hljs-strong, .hljs-tag {
   font-weight: bold; }
 
+.author_links {
+  float: left;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative; }
+  .author_links ul {
+    margin: 0; }
+    .author_links ul li {
+      display: inline-block; }
+      .author_links ul li a {
+        padding: 0 7px;
+        color: #fff; }
+
 .terminal {
   background: #000;
   float: left;
