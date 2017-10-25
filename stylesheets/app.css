@@ -173,7 +173,9 @@ pre i {
   text-align: center; }
 
 i.code {
-  font-family: Inconsolata; }
+  font-family: Inconsolata;
+  background: rgba(40, 40, 40, 0.22);
+  padding: 4px 8px; }
 
 table {
   float: left;
@@ -195,6 +197,11 @@ table {
       font-size: 14px; }
       table tbody tr td:first-child {
         font-family: Inconsolata; }
+      table tbody tr td small {
+        color: rgba(255, 255, 255, 0.4); }
+        table tbody tr td small a {
+          color: #84cae4;
+          text-decoration: underline; }
       table tbody tr td .code span {
         float: left;
         background: #2f2f2f;

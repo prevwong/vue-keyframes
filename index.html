@@ -141,7 +141,7 @@
 								    <tr>
 								        <td>loop</td>
 								        <td>
-								            If set to true, the keyframes will repeat itself infinitely
+								            If set to true, the keyframes will repeat itself infinitely. <small>See more on <a href="#manualLooping">Manual looping</a></small>
 								            <div class="code">
 								                <span class="default">Default: false</span>
 								            </div>
@@ -169,6 +169,7 @@
 								        <td>auto-run</td>
 								        <td>
 								            Defines whether to automatically play keyframes
+								            <small>See more on <a href="#customTrigger">Custom Trigger</a></small>
 								            <div class="code">
 								                <span class="default">Default: true</span>
 								            </div>
@@ -178,6 +179,7 @@
 								        <td>on-animate</td>
 								        <td>
 								            Callback function for whenever a frame is being animated.
+								            <small>See more on <a href="#callbacks">Callbacks</a></small>
 								            <div class="code">
 								                <span class="default">Default: false</span>
 								            </div>
@@ -187,6 +189,7 @@
 								        <td>on-end</td>
 								        <td>
 								            Callback function once all frames have been animated.
+								            <small>See more on <a href="#callbacks">Callbacks</a></small>
 								            <div class="code">
 								                <span class="default">Default: false</span>
 								            </div>
@@ -226,6 +229,7 @@
 								        <td>freeze</td>
 								        <td>
 								            If set to true, once the frame has animated, it will not be removed.
+								             <small>See more on <a href="#freeze">Freezing Frames</a></small>
 								            <div class="code">
 								                <span class="default">Default: false</span>
 								            </div>
@@ -239,7 +243,7 @@
 				</li>
 			</ul>
 		</section>
-		<section class = "section medium-12 columns">
+		<section id="freeze" class = "section medium-12 columns">
 			<h4 class="title"><span>03</span> Freezing frames</h4>
 			<p>There are times when the next frame also contains the contents of the current frame, so instead of copy-pasting the current frame, it's much more convenient to just freeze it. <br />Think of it as "appending" the current frame, whereby it wont be removed by the next frame.</p>
 			<ul class = "steps">
@@ -262,7 +266,7 @@
 </li>
 			</ul>
 		</section>
-		<section class = "section medium-12 columns">
+		<section id="customTrigger" class = "section medium-12 columns">
 			<h4 class="title"><span>04</span> Custom triggers</h4>
 			<p>By default, the keyframes will animate when they are rendered onto the page. But of course, this shouldnt always be the case. For example, sometimes you only want to animate the keyframes when the user clicks on a button or perhaps when the user scrolls to a particular section.<br />To do so, you will need to set <i class="code">auto-run</i> to false. 
 
@@ -303,7 +307,7 @@ app.$refs.custom_trigger.addEventListener("click", (e) => {
 </li>
 			</ul>
 		</section>
-		<section class = "section medium-12 columns">
+		<section id="manualLooping" class = "section medium-12 columns">
 			<h4 class="title"><span>05</span> Manual Looping</h4>
 			<p>In additon to the automatic looping that is simply activated by adding the <i class="code">loop="true"</i>, you can also manually call <i class="code">resetFrames()</i> method to loop the sequence.</p>
 			<ul class = "steps">
@@ -340,7 +344,7 @@ app.$refs.repeat.addEventListener("click", (e) => {
 </li>
 </ul>
 		</section>
-		<section class = "section medium-12 columns">
+		<section id="callbacks" class = "section medium-12 columns">
 			<h4 class="title"><span>06</span> Callback Functions</h4>
 			<ul class = "subsection">
 			<h5 class="title">On Animate <small>- Runs whenever a frame is animated.</small></h5>

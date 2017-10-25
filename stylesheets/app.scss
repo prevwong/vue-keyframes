@@ -168,6 +168,8 @@ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI", "Roboto","Oxygen","Ubu
 
 i.code {
 	font-family: Inconsolata;
+	    background: rgba(40, 40, 40, 0.22);
+    padding: 4px 8px;
 }
 table {
 	float:left;
@@ -196,6 +198,14 @@ table {
 				&:first-child {
 					font-family: Inconsolata;
 				}
+				small {
+				    color: rgba(255, 255, 255, 0.4);
+				    a {
+				    	color: #84cae4;
+    					text-decoration: underline;
+				    }
+				}
+
 				.code {
 					span {
 						float:left;
