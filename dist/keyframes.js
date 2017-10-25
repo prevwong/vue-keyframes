@@ -1,3 +1,11 @@
+/**
+vue-keyframes
+Developed by: Prev Wong	(imprev.co)
+Documentation: https://prevwong.github.io/vue-keyframes/
+Github: https://github.com/prevwong/vue-keyframes/
+License: MIT (https://raw.githubusercontent.com/prevwong/vue-keyframes/master/LICENSE)
+**/
+
 const Keyframes = {
 	install(Vue) {
 		Vue.component('Keyframes', {
