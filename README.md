@@ -13,7 +13,7 @@ github.com/prevwong/vue-keyframes
 Prev Wong	@prevwong 	imprev.co
 </code>
 </pre>
-[![npm version](https://badge.fury.io/js/drooltip.js.svg)](https://badge.fury.io/js/drooltip.js)
+[![npm version](https://badge.fury.io/js/vue-keyframes.svg)](https://badge.fury.io/js/drooltip.js)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![Support](https://supporterhq.com/api/b/9okwcyts1gevgy53glt8ffpyc)](https://supporterhq.com/give/9okwcyts1gevgy53glt8ffpyc)
@@ -22,7 +22,7 @@ Prev Wong	@prevwong 	imprev.co
 
 ![Demo](https://prevwong.github.io/vue-keyframes/img/animate.gif)
 
-vue-keyframes is a Vue component that allows you to create frame based animations. 
+vue-keyframes is a Vue component that allows you to create frame based animations. <br />
 Originally inspired by [react-keyframes](https://github.com/zeit/react-keyframes)
 
 ## Installation & Usage
