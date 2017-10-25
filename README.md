@@ -22,7 +22,8 @@ Prev Wong	@prevwong 	imprev.co
 
 ![Demo](https://raw.githubusercontent.com/prevwong/vue-keyframes/master/animate.gif)
 
-vue-keyframes is a Vue component that allows you to create frame based animations. Originally inspired by [react-keyframes](https://github.com/zeit/react-keyframes)
+vue-keyframes is a Vue component that allows you to create frame based animations. 
+Originally inspired by [react-keyframes](https://github.com/zeit/react-keyframes)
 
 ## Installation & Usage
 
