@@ -1,6 +1,7 @@
+---
 engines:
 ratings:
   paths:
-  - dist/**
+  - "dist/*"
 exclude_paths:
-- "vue-keyframes.js"
+  - "vue-keyframes.js"
