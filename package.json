@@ -8,7 +8,7 @@
   },
   "version": "1.0.0",
   "description": "Created frame-based animations in VueJS",
-  "main": "vue-keyframes.js",
+  "main": "dist/vue-keyframes.js",
   "scripts": {
     "test": "xo",
     "watch": "webpack --watch --progress --hide-modules --config=webpack.config.js"
