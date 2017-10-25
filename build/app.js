@@ -297,6 +297,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.Vue = _vueEsm2.default;
 
+console.log(_vueKeyframes.Keyframes);
 _vueEsm2.default.use(_vueKeyframes.Keyframes);
 _vueEsm2.default.component('prompt', {
 	"template": '<span class="prompt"><b>~ <i class="material-icons">arrow forward</i></b><span class="c"><slot></slot></span class="c"><caret v-if="noCaret==\'false\'"></caret><git :updated="updated" :time="time"></git></span>',
