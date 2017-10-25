@@ -1,12 +1,12 @@
 module.exports = {
   // This is the "main" file which should include all other modules
   entry: {
-    "vue-keyframes" : './dist/bundle.js',
+    "vue-keyframes" : './src/bundle.js',
   },
   // Where should the compiled file go?
   output: {
     // To the `dist` folder
-    path: __dirname + "/",
+    path: __dirname + "/dist/",
     filename: "[name].js",
     libraryTarget: "commonjs2"
   },

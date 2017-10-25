@@ -96,6 +96,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+/**
+vue-keyframes
+Developed by: Prev Wong	(imprev.co)
+Documentation: https://prevwong.github.io/vue-keyframes/
+Github: https://github.com/prevwong/vue-keyframes/
+License: MIT (https://raw.githubusercontent.com/prevwong/vue-keyframes/master/LICENSE)
+**/
+
 var Keyframes = {
 	install: function install(Vue) {
 		Vue.component('Keyframes', {
