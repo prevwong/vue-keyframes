@@ -11165,82 +11165,173 @@ exports.clearImmediate = clearImmediate;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dist_keyframes__ = __webpack_require__(7);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Keyframes", function() { return __WEBPACK_IMPORTED_MODULE_0__dist_keyframes__["a"]; });
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _keyframes = __webpack_require__(1);
+
+Object.defineProperty(exports, 'Keyframes', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_keyframes).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const Keyframes = {
-	install(Vue) {
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var Keyframes = {
+	install: function install(Vue) {
 		Vue.component('Keyframes', {
-			mounted() {
+			mounted: function mounted() {
 				this.animateNextFrame();
-				if ( !JSON.parse(this.autoRun) ) { 
-					this.stop = true; 
+				if (!JSON.parse(this.autoRun)) {
+					this.stop = true;
 				}
 			},
+
 			template: '<div></div>',
 			watch: {
-				stop(val) {
-					if ( !val ) {
+				stop: function stop(val) {
+					if (!val) {
 						this.animateNextFrame();
 					}
 				}
 			},
 			methods: {
-				callFn(fn, noFrame) {
-					if ( fn !== false && typeof (fn) === 'function') {
-						noFrame ? fn(this.$el) : fn( this.$el, this.frameNum );
-					} else if ( fn !== false && window[fn] !== undefined ) {
-						noFrame ? window[fn](this.$el) : window[fn]( this.$el, this.frameNum );
+				callFn: function callFn(fn, noFrame) {
+					if (fn !== false && typeof fn === 'function') {
+						noFrame ? fn(this.$el) : fn(this.$el, this.frameNum);
+					} else if (fn !== false && window[fn] !== undefined) {
+						noFrame ? window[fn](this.$el) : window[fn](this.$el, this.frameNum);
 					} else {
 						return false;
 					}
 				},
-				animateNextFrame() {
-					if ( this.stop == true ) { return false; }
-					if ( this.frameNum > 0 ) {
-						const freeze = this.frames.data[this.frameNum - 1].freeze;
-						if ( !freeze ) {
+				animateNextFrame: function animateNextFrame() {
+					var _this = this;
+
+					if (this.stop == true) {
+						return false;
+					}
+					if (this.frameNum > 0) {
+						var freeze = this.frames.data[this.frameNum - 1].freeze;
+						if (!freeze) {
 							Vue.set(this.frames.visibility, this.frameNum - 1, false);
 						}
 					}
 					Vue.set(this.frames.visibility, this.frameNum, true);
-					setTimeout(() => {
+					setTimeout(function () {
 						// if ( this.frameNum === 0 ) {
-							this.callFn(this.onAnimate);
+						_this.callFn(_this.onAnimate);
 						// }
-					})
-					this.waitForDelay(() => {
-						if ( this.frameNum < Object.keys(this.frames.data).length - 1) {
-							this.frameNum++;
-							this.animateNextFrame();
+					});
+					this.waitForDelay(function () {
+						if (_this.frameNum < Object.keys(_this.frames.data).length - 1) {
+							_this.frameNum++;
+							_this.animateNextFrame();
 						} else {
-							this.callFn(this.onEnd, true);
-							if ( JSON.parse(this.loop) ) {
-								this.resetFrames();
+							_this.callFn(_this.onEnd, true);
+							if (JSON.parse(_this.loop)) {
+								_this.resetFrames();
 							}
 						}
 					});
 				},
-				waitForDelay(fn) {
-					const currentFrame = this.frames.data[this.frameNum];
-					const delay = this.frameNum === -1 ? this.delay : currentFrame.duration;
+				waitForDelay: function waitForDelay(fn) {
+					var currentFrame = this.frames.data[this.frameNum];
+					var delay = this.frameNum === -1 ? this.delay : currentFrame.duration;
 					clearTimeout(this.timer);
 					this.timer = setTimeout(fn, delay);
 				},
-				resetFrames() {
-					for ( const i in this.frames.visibility ) {
-						if ( {}.hasOwnProperty.call(this.frames.visibility, i) ) {
+				resetFrames: function resetFrames() {
+					for (var i in this.frames.visibility) {
+						if ({}.hasOwnProperty.call(this.frames.visibility, i)) {
 							Vue.set(this.frames.visibility, i, false);
 						}
 					}
@@ -11248,76 +11339,78 @@ const Keyframes = {
 					this.animateNextFrame();
 				}
 			},
-			data() {
+			data: function data() {
 				return {
 					register: false,
-					frames: {visibility: {}, data: {}},
+					frames: { visibility: {}, data: {} },
 					frameNum: -1,
 					timer: null,
 					count: 0,
-					stop : false
+					stop: false
 				};
 			},
+
 			props: {
-				loop: {default: false},
-				delay: {default: 0},
-				onAnimate: {default: false},
-				onEnd: {default: false},
-				autoRun: {default: true},
-				component: {default: 'div'}
+				loop: { default: false },
+				delay: { default: 0 },
+				onAnimate: { default: false },
+				onEnd: { default: false },
+				autoRun: { default: true },
+				component: { default: 'div' }
 			},
-			render(createElement) {
-				if ( !this.register ) {
-					const children = this.$slots.default
-									.filter(node => !node.text);
-					children.map((child, index) => {
-						this.resetFrames();
-						let duration = 200;
-						let freeze = false;
-						if ( child.data !== undefined && child.data.attrs !== undefined ) {
+			render: function render(createElement) {
+				var _this2 = this;
+
+				if (!this.register) {
+					var _children = this.$slots.default.filter(function (node) {
+						return !node.text;
+					});
+					_children.map(function (child, index) {
+						_this2.resetFrames();
+						var duration = 200;
+						var freeze = false;
+						if (child.data !== undefined && child.data.attrs !== undefined) {
 							duration = child.data.attrs.duration === undefined ? 200 : child.data.attrs.duration;
 							freeze = child.data.attrs.freeze === undefined ? false : child.data.attrs.freeze;
 						}
-						Vue.set(this.frames.data, index, {
+						Vue.set(_this2.frames.data, index, {
 							duration: parseInt(duration, 10),
 							freeze: freeze
 						});
-						if ( index === children.length - 1 ) {
-							this.register = true;
+						if (index === _children.length - 1) {
+							_this2.register = true;
 						}
 						return true;
 					});
 				}
-				const children = this.$slots.default
-								.filter(node => !node.text)
-								.map((child, index) => {
-									let val = null;
-									if ( this.frames.visibility[index] ) {
-										if ( child.data !== undefined && child.data.attrs !== undefined ) {
-											delete child.data.attrs.freeze;
-											delete child.data.attrs.duration;
-										}
-										val = child;
-									} else {
-										Vue.set(this.frames.visibility, index, false);
-										val = false;
-									}
-									return val;
-								});
+				var children = this.$slots.default.filter(function (node) {
+					return !node.text;
+				}).map(function (child, index) {
+					var val = null;
+					if (_this2.frames.visibility[index]) {
+						if (child.data !== undefined && child.data.attrs !== undefined) {
+							delete child.data.attrs.freeze;
+							delete child.data.attrs.duration;
+						}
+						val = child;
+					} else {
+						Vue.set(_this2.frames.visibility, index, false);
+						val = false;
+					}
+					return val;
+				});
 
-				const x = createElement(
-					this.component,
-					{},
-					children
-				);
+				var x = createElement(this.component, {}, myChildren);
 				return x;
 			}
 		});
 	}
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Keyframes);
+exports.default = Keyframes;
 
+/***/ })
+/******/ ]);
 
 /***/ })
 /******/ ]);
