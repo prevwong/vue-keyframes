@@ -6,7 +6,7 @@
     },
     "globals" : ["window"]
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Created frame-based animations in VueJS",
   "main": "dist/vue-keyframes.js",
   "scripts": {

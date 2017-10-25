@@ -8,14 +8,14 @@ __   ___   _  ___ ______| | _____ _   _| |_ _ __ __ _ _ __ ___   ___  ___
   \_/  \__,_|\___|      |_|\_\___|\__, |_| |_|  \__,_|_| |_| |_|\___||___/
                                    __/ |                                  
                                   |___/                                   
-vue-keyframes	v1.0.0
+vue-keyframes	v1.0.1
 github.com/prevwong/vue-keyframes
 Prev Wong	@prevwong 	imprev.co
 </code>
 </pre>
 [![npm version](https://badge.fury.io/js/vue-keyframes.svg)](https://badge.fury.io/js/vue-keyframes)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/prevwong/vue-keyframes/issues)
 [![Support](https://supporterhq.com/api/b/9okwcyts1gevgy53glt8ffpyc)](https://supporterhq.com/give/9okwcyts1gevgy53glt8ffpyc)
 
 ## Overview
@@ -39,6 +39,7 @@ Documentation and Demos are [here](https://prevwong.github.io/vue-keyframes)
 
 Release | Description
 ------------ | -------------
-v1.0.0 | Initial release
+v1.0.1 | Project restructre
+v1.0.1 | Initial release
 
 Feel free to fork it, and contribute to make vue-keyframes even better!
