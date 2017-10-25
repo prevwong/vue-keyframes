@@ -29,7 +29,6 @@ Originally inspired by [react-keyframes](https://github.com/zeit/react-keyframes
 
 Documentation and Demos are [here](https://prevwong.github.io/vue-keyframes)
 
-
 ## Q&A
 
 * Q: Is this a direct port of [react-keyframes](https://github.com/zeit/react-keyframes) ?
