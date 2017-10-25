@@ -7,7 +7,8 @@ module.exports = {
   output: {
     // To the `dist` folder
     path: __dirname + "/",
-    filename: "[name].js"
+    filename: "[name].js",
+    libraryTarget: "commonjs2"
   },
   module: {
     // Special compilation rules
