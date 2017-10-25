@@ -297,7 +297,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.Vue = _vueEsm2.default;
 
-console.log(_vueKeyframes.Keyframes);
 _vueEsm2.default.use(_vueKeyframes.Keyframes);
 _vueEsm2.default.component('prompt', {
 	"template": '<span class="prompt"><b>~ <i class="material-icons">arrow forward</i></b><span class="c"><slot></slot></span class="c"><caret v-if="noCaret==\'false\'"></caret><git :updated="updated" :time="time"></git></span>',
@@ -11246,7 +11245,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _keyframes = __webpack_require__(1);
 
-Object.defineProperty(exports, 'Keyframes', {
+Object.defineProperty(exports, "Keyframes", {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_keyframes).default;
@@ -11400,7 +11399,7 @@ var Keyframes = {
 					return val;
 				});
 
-				var x = createElement(this.component, {}, myChildren);
+				var x = createElement(this.component, {}, children);
 				return x;
 			}
 		});

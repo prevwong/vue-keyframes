@@ -2,7 +2,6 @@ import Vue from 'vue/dist/vue.esm.js'
 import {Keyframes} from 'vue-keyframes';
 window.Vue = Vue;
 
-console.log(Keyframes)
 Vue.use(Keyframes);
 Vue.component('prompt', {
 	"template" : '<span class="prompt"><b>~ <i class="material-icons">arrow forward</i></b><span class="c"><slot></slot></span class="c"><caret v-if="noCaret==\'false\'"></caret><git :updated="updated" :time="time"></git></span>',
