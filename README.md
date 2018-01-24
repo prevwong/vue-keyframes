@@ -39,7 +39,7 @@ Documentation and Demos are [here](https://prevwong.github.io/vue-keyframes)
 
 Release | Description
 ------------ | -------------
-v1.0.1 | Project restructre
+v1.0.1 | Project restructure
 v1.0.1 | Initial release
 
 Feel free to fork it, and contribute to make vue-keyframes even better!
